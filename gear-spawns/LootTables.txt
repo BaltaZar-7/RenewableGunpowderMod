@@ -1,0 +1,32 @@
+#-------------------------
+loottable=loottabletoolchestdrawer
+#-------------------------
+item=GEAR_ScrapLead w=3
+item=GEAR_DustingSulfur w=1
+item=GEAR_StumpRemover w=1
+#-------------------------
+loottable=loottabletoolchest
+#-------------------------
+item=GEAR_ScrapLead w=2
+item=GEAR_DustingSulfur w=6
+item=GEAR_StumpRemover w=6
+#-------------------------
+loottable=loottabletoolchest_sml
+#-------------------------
+item=GEAR_ScrapLead w=2
+item=GEAR_DustingSulfur w=1
+item=GEAR_StumpRemover w=1
+#-------------------------
+loottable=loottableworkbench
+#-------------------------
+item=GEAR_ScrapLead w=1
+#-------------------------
+loottable=loottablemetalbox
+#-------------------------
+item=GEAR_ScrapLead w=1
+#-------------------------
+loottable=loottabletrunk
+#-------------------------
+item=GEAR_DustingSulfur w=2
+item=GEAR_StumpRemover w=2
+#-------------------------
