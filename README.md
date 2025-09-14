@@ -10,7 +10,7 @@ There is also a modcomponent file, which adds these 3 materials to some containe
 Download and install dependancy mods AND its dependancies: ModSettings, ModComponent  
 Download and place the dll file into your \Mods folder.  
 Download and place the modcomponent file into your \Mods folder.  
-These two files can work seperately, so you can install just one of them.  
+These two files can work seperately, so you can install just one of them. The dll provide beachcombing loot, the component provides container loot.  
 Launch the game, and go into modsettings, and change the values to your liking. Can edit the json file generated with the mod for more precise setting.  
 # Thank you for downloading!
 Mod for The Long Dark game created by Hinterland Studios  
