@@ -1,6 +1,6 @@
-# RenewableGunpowderMod
-![305620_14](https://github.com/user-attachments/assets/34fc04ea-c8dd-49aa-a247-75c11a66ef7d)
-Adds gunpowder materials: Dusting Sulfur, Stump Remover and Lead to loot pools via beachcombing.  
+# Renewable Gunpowder Mod
+Adds gunpowder materials: Dusting Sulfur, Stump Remover and Lead to loot pools via beachcombing. 
+![305620_14](https://github.com/user-attachments/assets/c269cb21-8c64-463c-8504-f47d8c4044d4)
 # Description
 First, I wanted to make a Trader pool mod, but that is out of my league. So I went for beachcombing.  
 Adds the above 3 raw materials to loottables and beachcombing tables.  
