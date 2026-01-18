@@ -1,4 +1,6 @@
-﻿using HarmonyLib;
+﻿#nullable disable
+
+using HarmonyLib;
 using Il2Cpp;
 using Il2CppNewtonsoft.Json.Linq;
 using MelonLoader;
@@ -13,15 +15,15 @@ namespace RenewableGunpowderMod
     {
         [Section("Spawn chance (%)")]
         [Name("Dusting Sulfur chance")]
-        [Slider(0f, 50f)]
+        [Slider(0f, 5f)]
         public float sulfurChance = 1f;
 
         [Name("Stump Remover chance")]
-        [Slider(0f, 50f)]
+        [Slider(0f, 5f)]
         public float stumpChance = 1f;
 
         [Name("Scrap Lead chance")]
-        [Slider(0f, 50f)]
+        [Slider(0f, 5f)]
         public float leadChance = 1f;
 
         protected override void OnConfirm()
@@ -46,6 +48,16 @@ namespace RenewableGunpowderMod
     [HarmonyPatch(typeof(RadialObjectSpawner), "GetNextPrefabToSpawn")]
     internal class BeachcombingLootPatch
     {
+        private static readonly string[] ExcludedPrefabs =
+        {
+        "GEAR_Stone",
+        "GEAR_Stick",
+        "GEAR_Coal",
+        "GEAR_Flint",
+        "GEAR_Rock",
+        "GEAR_Branch"
+        };
+
         private static void Postfix(RadialObjectSpawner __instance, ref GameObject __result)
         {
             try
@@ -54,6 +66,18 @@ namespace RenewableGunpowderMod
                     return;
 
                 string originalPrefab = __result != null ? __result.name : "<null>";
+
+                // --- EXCLUSIONS ---
+                foreach (string excluded in ExcludedPrefabs)
+                {
+                    if (originalPrefab.Contains(excluded))
+                    {
+#if DEBUG
+        MelonLogger.Msg($"[DEBUG] Excluded prefab, keeping original: {originalPrefab}");
+#endif
+                        return;
+                    }
+                }
 
                 float totalChance = Settings.instance.sulfurChance + Settings.instance.stumpChance + Settings.instance.leadChance;
                 float roll = UnityEngine.Random.Range(0f, 100f);
